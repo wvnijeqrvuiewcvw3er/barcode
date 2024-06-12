@@ -1,10 +1,11 @@
 <?php
 
+
 class BasedeDatos{
 
-    const servidor="localhost:3221";
-    const usuariobd="alonso110";
-    const clave="alonso110";
+    const servidor="localhost:3528";
+    const usuariobd="chable123";
+    const clave="chable123";
     const nombrebd="proyecto_mac";
     
 

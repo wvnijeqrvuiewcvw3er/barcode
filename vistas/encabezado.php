@@ -49,7 +49,7 @@
             <li class="treeview"><a href="#"><i class='fas fa-file-alt' style='font-size:17px'></i><span> ACTAS DE DEFUNCION</span><i class="fa fa-angle-right"></i></a>
             <ul class="treeview-menu">
                 <li><a href="index.php?c=registro&a=mostrar"><i class='fas fa-address-book'></i> Registro</a></li>
-                <li><a href="index.php?c=prestamos&a=mostrar"><i class='fas fa-calendar-alt'></i> Prestamos</a></li>
+                <li><a href="?c=producto"><i class='fas fa-calendar-alt'></i> Prestamos</a></li>
             </ul>
             </li>
             <li class="treeview"><a href="#"><i class='fas fa-file-alt' style='font-size:17px'></i><span> ACTAS DE NACIMIENTO</span><i class="fa fa-angle-right"></i></a>

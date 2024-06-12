@@ -1,11 +1,11 @@
 <div class="content-wrapper">
         <div class="page-title">
           <div>
-            <h1>Data Table</h1>
+            <h1>Prestamos</h1>
             <ul class="breadcrumb side">
               <li><i class="fa fa-home fa-lg"></i></li>
-              <li>Tables</li>
-              <li class="active"><a href="#">Data Table</a></li>
+              <li>Actas de de defuncion</li>
+              <li class="active"><a href="#">Prestamos</a></li>
             </ul>
           </div>
           <div><a class="btn btn-primary btn-flat" href="?c=producto&a=FormCrear"><i class="fa fa-lg fa-plus"></i></a>

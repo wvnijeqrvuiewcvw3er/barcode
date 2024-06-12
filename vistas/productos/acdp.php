@@ -3,11 +3,13 @@
         <div>
             <h1>Prestamos</h1>
             <ul class="breadcrumb side">
-            <li><a href="index.php"><i class="fa fa-home fa-lg"></i></a></li>
+                <li><i class="fa fa-home fa-lg"></i></li>
+                <li>Tables</li>
                 <li class="active"><a href="#">Prestamos</a></li>
             </ul>
         </div>
-        <div><a class="btn btn-primary btn-flat" href="?c=producto&a=FormCrear"><i class="fa fa-lg fa-plus"></i></a></div>
+        <div><a class="btn btn-primary btn-flat" href="?c=producto&a=FormCrear"><i class="fa fa-lg fa-plus"></i></a>
+        </div>
     </div>
     <div class="row">
         <div class="col-md-12">
@@ -17,46 +19,61 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Codigo</th>
-                                <th>Fecha de prestamo</th>
-                                <th>Totalde dias en prestamo</th>
+                                <th>CÓDIGO</th>
+                                <th>Fecha de préstamo</th>
+                                <th>Persona que recibe</th>
+                                <th>Persona que devuelve</th>
+                                <th>Días en préstamo</th>
                                 <th>Estatus</th>
-                                <th>Accion</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>21441234</td>
-                                <td>31/05/2024</td>
-                                <th>10</th>
-                                <td style="color: green;">Entregado</td>
-                                <td>
-                                    <a class="btn btn-info btn-flat" href="?c=producto&a=FormCrear&id=1"><i class="fa fa-lg fa-check"></i></a>
+                            <?php foreach ($this->modelo->Listar() as $r) : ?>
+                                <tr>
+                                    <td><?= $r->pro_id ?></td>
+                                    <td><?= $r->pro_nom ?></td>
+                                    <td><?= $r->pro_fecha ?></td>
+                                    <td><?= $r->pro_mar ?></td>
+                                    <td><?= $r->pro_img ?></td>
+                                    <td>
+                                        <?php
+                                        $loanDate = new DateTime($r->pro_fecha);
+                                        $currentDate = new DateTime();
+                                        $difference = $currentDate->diff($loanDate);
+                                        $daysInLoan = $difference->days;
+                                        echo $daysInLoan;
+                                        ?>
+                                    </td>
+                                    <td style="background-color: 
+        <?php 
+            // Determine background color based on number of days in loan
+            if ($daysInLoan >= 1 && $daysInLoan <= 7) {
+                echo 'gray';
+            } elseif ($daysInLoan >= 8 && $daysInLoan <= 15) {
+                echo 'yellow';
+            } elseif ($daysInLoan > 16) {
+                echo 'red';
+            } else {
+                echo 'white'; // Default background color
+            }
+        ?>;">
+        <?= $r->pro_pre ?>
+    </td>
+                                    <td>
+                                        <a class="btn btn-info btn-flat" href="?c=producto&a=FormCrear&id=<?= $r->pro_id ?>">
+                                            <i class="fa fa-lg fa-refresh"></i>
+                                        </a>
+                                        <a class="btn btn-warning btn-flat" href="?c=producto&a=Borrar&id=<?= $r->pro_id ?>">
+                                            <i class="fa fa-lg fa-trash"></i>
+                                        </a>
+                                        <a class="btn btn-success btn-flat" href="?c=producto&a=Check&id=<?= $r->pro_id ?>">
+                                            <i class="fa fa-lg fa-check"></i>
+                                        </a>
+                                    </td>
 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>2353426</td>
-                                <td>31/05/2024</td>
-                                <th>15</th>
-                                <td style="color: yellow;">Pendiente</td>
-
-                                <td>
-                                    <a class="btn btn-info btn-flat" href="?c=producto&a=FormCrear&id=1"><i class="fa fa-lg fa-check"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>21441234</td>
-                                <td>31/05/2024</td>
-                                <th>20</th>
-                                <td style="color: red;">Pendiente</td>
-                                <td>
-                                    <a class="btn btn-info btn-flat" href="?c=producto&a=FormCrear&id=1"><i class="fa fa-lg fa-check"></i></a>
-                                </td>
-                            </tr>
+                                </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>

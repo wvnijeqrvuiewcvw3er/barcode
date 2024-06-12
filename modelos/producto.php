@@ -1,6 +1,7 @@
 <?php
 
 class Producto{
+    
 
     private $pdo;
 
@@ -11,6 +12,7 @@ class Producto{
     private $pro_pre;
     private $pro_can;
     private $pro_img;
+    private $pro_fecha; // Nueva propiedad para la fecha
 
     public function __CONSTRUCT(){
         $this->pdo = BasedeDatos::Conectar();
@@ -48,11 +50,11 @@ class Producto{
         $this->pro_cos=$cos;
     }
 
-    public function getPro_pre() : ?float{
+    public function getPro_pre() : ?string{
         return $this->pro_pre;
     }
 
-    public function setPro_pre(float $pre){
+    public function setPro_pre(string $pre){
         $this->pro_pre=$pre;
     }
 
@@ -70,6 +72,14 @@ class Producto{
 
     public function setPro_img(string $img){
         $this->pro_img=$img;
+    }
+
+    public function getPro_fecha() : ?string{
+        return $this->pro_fecha;
+    }
+
+    public function setPro_fecha(string $fecha){
+        $this->pro_fecha=$fecha;
     }
 
     public function Cantidad(){
@@ -104,6 +114,8 @@ class Producto{
             $p->setPro_cos($r->pro_cos);
             $p->setPro_pre($r->pro_pre);
             $p->setPro_can($r->pro_can);
+            $p->setPro_img($r->pro_img);
+            $p->setPro_fecha($r->pro_fecha);
 
             return $p;
 
@@ -114,14 +126,16 @@ class Producto{
 
     public function Insertar(Producto $p){
         try{
-            $consulta="INSERT INTO productos_mac(pro_nom,pro_mar,pro_cos,pro_pre,pro_can) VALUES (?,?,?,?,?);";
+            $consulta="INSERT INTO productos_mac(pro_nom, pro_mar, pro_cos, pro_pre, pro_can, pro_img, pro_fecha) VALUES (?, ?, ?, ?, ?, ?, ?);";
             $this->pdo->prepare($consulta)
                     ->execute(array(
                         $p->getPro_nom(),
                         $p->getPro_mar(),
                         $p->getPro_cos(),
                         $p->getPro_pre(),
-                        $p->getPro_can()
+                        $p->getPro_can(),
+                        $p->getPro_img(),
+                        $p->getPro_fecha()
                     ));
         }catch(Exception $e){
             die($e->getMessage());
@@ -135,7 +149,9 @@ class Producto{
                 pro_mar=?,
                 pro_cos=?,
                 pro_pre=?,
-                pro_can=?
+                pro_can=?,
+                pro_img=?,
+                pro_fecha=?
                 WHERE pro_id=?;
             ";
             $this->pdo->prepare($consulta)
@@ -145,6 +161,8 @@ class Producto{
                         $p->getPro_cos(),
                         $p->getPro_pre(),
                         $p->getPro_can(),
+                        $p->getPro_img(),
+                        $p->getPro_fecha(),
                         $p->getPro_id()
                     ));
         }catch(Exception $e){
@@ -162,3 +180,6 @@ class Producto{
         }
     }
 }
+
+
+?>

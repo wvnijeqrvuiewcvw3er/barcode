@@ -1,5 +1,6 @@
 <?php
 
+require_once "modelos/conexion.php";
 require_once "modelos/basededatos.php";
 require_once "modelos/db.php";
 

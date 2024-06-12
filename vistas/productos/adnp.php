@@ -1,1 +1,1 @@
-<h1 style="justify-content: center;">Hola 4</h1>
+<h1>Hola 4</h1>
