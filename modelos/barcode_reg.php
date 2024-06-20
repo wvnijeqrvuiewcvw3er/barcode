@@ -18,7 +18,6 @@ if (isset($_POST['barcode']) && !empty($_POST['barcode'])) {
             date_default_timezone_set('America/Mexico_City'); 
             $DateTime = date("Y-m-d H:i:s"); 
 
-            
             $insert_query = "INSERT INTO item (barcode, datereg) VALUES (?, ?)";
             if ($stmt = mysqli_prepare($connection, $insert_query)) {
                 mysqli_stmt_bind_param($stmt, "ss", $barcode, $DateTime);
