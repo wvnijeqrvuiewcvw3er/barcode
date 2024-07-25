@@ -1,14 +1,14 @@
 <div class="content-wrapper">
     <div class="page-title">
         <div>
-            <h1><i class="fa fa-edit"></i> Productos</h1>
-            <p>Ingresa los datos para registrar un producto nuevo</p>
+            <h1><i class="fa fa-edit"></i> Registro</h1>
+            <p>Ingresa los datos para registrar</p>
         </div>
         <div>
             <ul class="breadcrumb">
                 <li><i class="fa fa-home fa-lg"></i></li>
-                <li>Productos</li>
-                <li><a href="#"><?=$titulo?> Producto</a></li>
+                <li>Registrar</li>
+                <li><a href="#"><?=$titulo?> Actas</a></li>
             </ul>
         </div>
     </div>
@@ -20,7 +20,7 @@
                         <div class="well bs-component">
                             <form class="form-horizontal" method="POST" action="?c=producto&a=Guardar">
                                 <fieldset>
-                                    <legend><?=$titulo?> Producto</legend>
+                                    <legend><?=$titulo?> Acta</legend>
                                     <div class="form-group">
                                         <input class="form-control" name="ID" type="hidden" value="<?=$p->getPro_id()?>">
 

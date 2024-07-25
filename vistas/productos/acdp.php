@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <table class="table table-hover table-bordered" id="sampleTable">
                         <thead>
-                            <tr>
+                            <tDr>
                                 <th>ID</th>
                                 <th>CÓDIGO</th>
                                 <th>Fecha de préstamo</th>
@@ -46,20 +46,19 @@
                                         ?>
                                     </td>
                                     <td style="background-color: 
-        <?php 
-            // Determine background color based on number of days in loan
-            if ($daysInLoan >= 1 && $daysInLoan <= 7) {
-                echo 'gray';
-            } elseif ($daysInLoan >= 8 && $daysInLoan <= 15) {
-                echo 'yellow';
-            } elseif ($daysInLoan > 16) {
-                echo 'red';
-            } else {
-                echo 'white'; // Default background color
-            }
+        <?php
+                                if ($daysInLoan >= 1 && $daysInLoan <= 7) {
+                                    echo 'gray';
+                                } elseif ($daysInLoan >= 8 && $daysInLoan <= 15) {
+                                    echo 'yellow';
+                                } elseif ($daysInLoan > 16) {
+                                    echo 'red';
+                                } else {
+                                    echo 'white';
+                                }
         ?>;">
-        <?= $r->pro_pre ?>
-    </td>
+                                        <?= $r->pro_pre ?>
+                                    </td>
                                     <td>
                                         <a class="btn btn-info btn-flat" href="?c=producto&a=FormCrear&id=<?= $r->pro_id ?>">
                                             <i class="fa fa-lg fa-refresh"></i>
@@ -67,7 +66,7 @@
                                         <a class="btn btn-warning btn-flat" href="?c=producto&a=Borrar&id=<?= $r->pro_id ?>">
                                             <i class="fa fa-lg fa-trash"></i>
                                         </a>
-                                        <a class="btn btn-success btn-flat" href="?c=producto&a=Check&id=<?= $r->pro_id ?>">
+                                        <a class="btn btn-success btn-flat"<?= $r->pro_id ?>">
                                             <i class="fa fa-lg fa-check"></i>
                                         </a>
                                     </td>
