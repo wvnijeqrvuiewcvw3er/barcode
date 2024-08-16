@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <table class="table table-hover table-bordered" id="sampleTable">
                         <thead>
-                            <tDr>
+                            <tr>
                                 <th>ID</th>
                                 <th>CÓDIGO</th>
                                 <th>Fecha de préstamo</th>
@@ -66,11 +66,10 @@
                                         <a class="btn btn-warning btn-flat" href="?c=producto&a=Borrar&id=<?= $r->pro_id ?>">
                                             <i class="fa fa-lg fa-trash"></i>
                                         </a>
-                                        <a class="btn btn-success btn-flat"<?= $r->pro_id ?>">
+                                        <a class="btn btn-success btn-flat" onclick="marcarFilaVerde(this)">
                                             <i class="fa fa-lg fa-check"></i>
                                         </a>
                                     </td>
-
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
@@ -80,3 +79,11 @@
         </div>
     </div>
 </div>
+
+<script>
+function marcarFilaVerde(elemento) {
+    var fila = elemento.closest('tr');
+    fila.style.backgroundColor = 'green';
+}
+</script>
+a

@@ -16,16 +16,15 @@
     <div class="col-md-6">
       <div class="card">
         <h3 class="card-title">TOTAL DE ACTAS CAPTURADAS</h3>
-        <p><?php $p = $this->modelo->Cantidad() ?>
-          <?= $p->Cantidad ?>
+        <p>
+          
         </p>
       </div>
     </div>
     <div class="col-md-6">
       <div class="card">
         <h3 class="card-title">TOTAL DE ACTAS EN PRESTAMO</h3>
-        <p><?php $p = $this->modelo->Cantidad() ?>
-          <?= $p->Cantidad ?>
+        <p>
         </p>
       </div>
     </div>

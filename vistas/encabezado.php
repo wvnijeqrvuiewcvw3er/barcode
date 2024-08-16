@@ -37,7 +37,7 @@
       <aside class="main-sidebar hidden-print">
         <section class="sidebar">
           <div class="user-panel">
-            <div  class="pull-left image"><img class="img-circle" src="https://yt3.googleusercontent.com/Z2pyUjmIkpSV56gUB3XkX-Bhb8NXu9ch-C-MZlPfWhQQAyvZk6-bjYpF8h2tXZTV8cseHsdrO0k=s900-c-k-c0x00ffffff-no-rj" alt="User Image"></div>
+            <div  class="pull-left image"><img class="img-circle" src="https://www.gob.mx/cms/uploads/structure/main_image/3990/salud-verde-03.jpg" alt="User Image"></div>
             <div style="justify-content: center;" class="pull-left info">
               <p>JURISDICCION</p>
               <p class="center-text">10</p>
@@ -54,8 +54,8 @@
             </li>
             <li class="treeview"><a href="#"><i class='fas fa-file-alt' style='font-size:17px'></i><span> ACTAS DE NACIMIENTO</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="vistas/inicio/adnr.php"><i class='fas fa-address-book'></i> Registro</a></li>
-                <li><a href="vistas/inicio/adnp.php"><i class='fas fa-calendar-alt'></i> Prestamos</a></li>
+                <li><a href=""><i class='fas fa-address-book'></i> Registro</a></li>
+                <li><a href="?c=adnp"><i class='fas fa-calendar-alt'></i> Prestamos</a></li>
               </ul>
             </li>
           </ul>

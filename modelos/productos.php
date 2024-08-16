@@ -1,6 +1,6 @@
 <?php
 
-class Producto{
+class Registro {
 
     private $pdo;
 
@@ -83,7 +83,7 @@ class Producto{
 
     public function Cantidad(){
         try{
-            $consulta = $this->pdo->prepare("SELECT SUM(pro_can) as Cantidad FROM productos_mac;");
+            $consulta = $this->pdo->prepare("SELECT SUM(pro_can) as Cantidad FROM registro;");
             $consulta->execute();
             return $consulta->fetch(PDO::FETCH_OBJ);
         }catch(Exception $e){
@@ -93,7 +93,7 @@ class Producto{
 
     public function Listar(){
         try{
-            $consulta = $this->pdo->prepare("SELECT * FROM productos_mac;");
+            $consulta = $this->pdo->prepare("SELECT * FROM registro;");
             $consulta->execute();
             return $consulta->fetchAll(PDO::FETCH_OBJ);
         }catch(Exception $e){
@@ -103,11 +103,11 @@ class Producto{
 
     public function Obtener($id){
         try{
-            $consulta = $this->pdo->prepare("SELECT * FROM productos_mac WHERE pro_id=?;");
+            $consulta = $this->pdo->prepare("SELECT * FROM registro WHERE pro_id=?;");
             $consulta->execute(array($id));
             $r = $consulta->fetch(PDO::FETCH_OBJ);
 
-            $p = new Producto();
+            $p = new Registro();
             $p->setPro_id($r->pro_id);
             $p->setPro_nom($r->pro_nom);
             $p->setPro_mar($r->pro_mar);
@@ -124,9 +124,9 @@ class Producto{
         }
     }
 
-    public function Insertar(Producto $p){
+    public function Insertar(Registro $p){
         try{
-            $consulta = "INSERT INTO productos_mac(pro_nom, pro_mar, pro_cos, pro_pre, pro_can, pro_img, pro_fecha) 
+            $consulta = "INSERT INTO registro(pro_nom, pro_mar, pro_cos, pro_pre, pro_can, pro_img, pro_fecha) 
                          VALUES (?, ?, ?, ?, ?, ?, ?);";
 
             $this->pdo->prepare($consulta)
@@ -144,9 +144,9 @@ class Producto{
         }
     }
 
-    public function Actualizar(Producto $p){
+    public function Actualizar(Registro $p){
         try{
-            $consulta = "UPDATE productos_mac SET 
+            $consulta = "UPDATE registro SET 
                             pro_nom = ?,
                             pro_mar = ?,
                             pro_cos = ?,
@@ -174,7 +174,7 @@ class Producto{
 
     public function Eliminar($id){
         try{
-            $consulta = "DELETE FROM productos_mac WHERE pro_id = ?;";
+            $consulta = "DELETE FROM registro WHERE pro_id = ?;";
             $this->pdo->prepare($consulta)
                       ->execute(array($id));
         }catch(Exception $e){
@@ -183,6 +183,5 @@ class Producto{
     }
     
 }
-
 
 ?>

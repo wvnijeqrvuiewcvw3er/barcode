@@ -28,6 +28,7 @@ class ProductoControlador{
         require_once "vistas/productos/form.php";
         require_once "vistas/pie.php";
     }
+    
 
 public function Guardar(){
     $p=new Producto();
@@ -52,5 +53,6 @@ public function Guardar(){
         $this->modelo->Eliminar($_GET["id"]);
         header("location:?c=producto");
     }
+    
 }
 ?>

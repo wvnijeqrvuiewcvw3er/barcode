@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="well bs-component">
-                            <form class="form-horizontal" method="POST" action="?c=producto&a=Guardar">
+                            <form class="form-horizontal" method="POST" action="?c=Registro&a=Guardar">
                                 <fieldset>
                                     <legend><?=$titulo?> Acta</legend>
                                     <div class="form-group">
