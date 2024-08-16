@@ -12,7 +12,7 @@ class AdnpControlador  {
 
     public function Inicio(){
         require_once "vistas/encabezado.php";
-        require_once "vistas/productos/acdp.php";
+        require_once "vistas/productos/adnp.php";
         require_once "vistas/pie.php";
     }
 

@@ -8,7 +8,7 @@
                 <li class="active"><a href="#">Prestamos</a></li>
             </ul>
         </div>
-        <div><a class="btn btn-primary btn-flat" href="?c=Registro&a=FormCrear"><i class="fa fa-lg fa-plus"></i></a>
+        <div><a class="btn btn-primary btn-flat" href="?c=adnp&a=FormsCrear"><i class="fa fa-lg fa-plus"></i></a>
         </div>
     </div>
     <div class="row">
@@ -60,10 +60,10 @@
                                         <?= $r->pro_pre ?>
                                     </td>
                                     <td>
-                                        <a class="btn btn-info btn-flat" href="?c=Registro&a=FormCrear&id=<?= $r->pro_id ?>">
+                                        <a class="btn btn-info btn-flat" href="?c=adnp&a=FormsCrear&id=<?= $r->pro_id ?>">
                                             <i class="fa fa-lg fa-refresh"></i>
                                         </a>
-                                        <a class="btn btn-warning btn-flat" href="?c=Registro&a=Borrar&id=<?= $r->pro_id ?>">
+                                        <a class="btn btn-warning btn-flat" href="?c=adnp&a=Borrar&id=<?= $r->pro_id ?>">
                                             <i class="fa fa-lg fa-trash"></i>
                                         </a>
                                         <a class="btn btn-success btn-flat" onclick="marcarFilaVerde(this)">
@@ -81,9 +81,9 @@
 </div>
 
 <script>
-function marcarFilaVerde(elemento) {
-    var fila = elemento.closest('tr');
-    fila.style.backgroundColor = 'green';
-}
+    function marcarFilaVerde(elemento) {
+        var fila = elemento.closest('tr');
+        fila.style.backgroundColor = 'green';
+    }
 </script>
 a
