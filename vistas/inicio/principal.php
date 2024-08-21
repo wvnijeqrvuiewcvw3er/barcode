@@ -17,14 +17,14 @@
       <div class="card">
         <h3 class="card-title">TOTAL DE ACTAS CAPTURADAS</h3>
         <p>
-          
+            3
         </p>
       </div>
     </div>
     <div class="col-md-6">
       <div class="card">
         <h3 class="card-title">TOTAL DE ACTAS EN PRESTAMO</h3>
-        <p>
+        <p>3
         </p>
       </div>
     </div>
